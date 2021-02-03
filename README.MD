@@ -206,7 +206,7 @@ Arduino MEGA2560        |      √       |              |             |
 Arduino Leonardo|      √       |              |             | 
 microbit        |      √       |              |             | 
 FireBeetle-M0        |      √       |              |             | 
-
+raspberry pi 3      |      √       |              |             | 
 
 ## History
 
