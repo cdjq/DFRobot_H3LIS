@@ -175,7 +175,7 @@ To use this library, first download the library file, paste it into the \Arduino
 
 MCU                | Work Well    | Work Wrong   | Untested    | Remarks
 ------------------ | :----------: | :----------: | :---------: | -----
-树莓派3             |      √         |            |             | 
+raspberry pi 3             |      √         |            |             | 
 
 
 
