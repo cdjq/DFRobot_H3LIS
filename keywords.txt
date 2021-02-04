@@ -49,7 +49,7 @@ readAccY	KEYWORD2
 
 
 
-ePowerDown	LITERAL1
+ePowerDown_0HZ	LITERAL1
 eLowPower_halfHZ	LITERAL1
 eLowPower_1HZ	LITERAL1
 eLowPower_2HZ	LITERAL1

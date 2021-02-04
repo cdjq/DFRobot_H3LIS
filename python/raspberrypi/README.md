@@ -61,7 +61,7 @@ To use this library, first download the library file, paste it into the \Arduino
 
   '''
     @brief Set data measurement rate
-    @param range:rate(HZ)
+    @param rate:rate(HZ)
                  POWERDOWN_0HZ = 0
                  LOWPOWER_HALFHZ = 1 
                  LOWPOWER_1HZ = 2
@@ -105,8 +105,8 @@ To use this library, first download the library file, paste it into the \Arduino
   enable_int_event(self,source,event)
 
   '''
-    @brief Check whether the interrupt event'source' is generated in interrupt 1
-    @param source:Interrupt event
+    @brief Check whether the interrupt event'event' is generated in interrupt 1
+    @param event:Interrupt event
                   X_LOWTHAN_TH = 0 <The acceleration in the x direction is less than the threshold>
                   X_HIGHERTHAN_TH  = 1<The acceleration in the x direction is greater than the threshold>
                   Y_LOWTHAN_TH = 2<The acceleration in the y direction is less than the threshold>
@@ -114,14 +114,14 @@ To use this library, first download the library file, paste it into the \Arduino
                   Z_LOWTHAN_TH = 4<The acceleration in the z direction is less than the threshold
                   Z_HIGHERTHAN_TH = 5<The acceleration in the z direction is greater than the threshold>
                   EVENT_ERROR = 6 <No event>
-    @return true ：produce
-            false：Interrupt event
+    @return True ：产生了此事件
+            False：未产生此事件
   '''
-  get_int1_event(self,source)
+  get_int1_event(self,event)
          
   '''
-    @brief Check whether the interrupt event'source' is generated in interrupt 2
-    @param source:Interrupt event
+    @brief Check whether the interrupt event'event' is generated in interrupt 2
+    @param event:Interrupt event
                   X_LOWTHAN_TH = 0 <The acceleration in the x direction is less than the threshold>
                   X_HIGHERTHAN_TH  = 1<The acceleration in the x direction is greater than the threshold>
                   Y_LOWTHAN_TH = 2<The acceleration in the y direction is less than the threshold>
@@ -129,8 +129,8 @@ To use this library, first download the library file, paste it into the \Arduino
                   Z_LOWTHAN_TH = 4<The acceleration in the z direction is less than the threshold
                   Z_HIGHERTHAN_TH = 5<The acceleration in the z direction is greater than the threshold>
                   EVENT_ERROR = 6 <No event>
-    @return true ：produce
-            false：Interrupt event
+    @return True ：产生了此事件
+            False：未产生此事件
   '''
   get_int2_event(self,source)
 

@@ -87,7 +87,7 @@ void setup(void){
   Serial.println("sleep");
   /**
    * @brief Enable interrupt
-   * @ source:Interrupt pin selection
+   * @param source:Interrupt pin selection
               eINT1 = 0,/<int1 >/
               eINT2,/<int2>/
    * @param event:Interrupt event selection

@@ -66,7 +66,7 @@ acce.enable_sleep(True)
 
 '''
 @brief Enable interrupt
-@source Interrupt pin selection
+@param source Interrupt pin selection
          INT_1 = 0,/<int pad 1 >/
          INT_2,/<int pad 2>/
 @param event Interrupt event selection

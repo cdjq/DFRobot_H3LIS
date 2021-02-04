@@ -40,7 +40,6 @@ To use this library, first download the library file, paste it into the \Arduino
 
 ```C++
   DFRobot_H3LIS();
-  
   /**
    * @brief Initialize the function
    * @return Return 0 indicates a successful initialization, while other values indicates failure and return to error code.
@@ -49,13 +48,13 @@ To use this library, first download the library file, paste it into the \Arduino
  
   /**
    * @brief Get chip id
-   * @return Returns the eight-digit serial number
+   * @return Returns the 8 bit serial number
    */
   uint8_t getID();
   
   /**
    * @brief Enable interrupt
-   * @ source Interrupt pin selection
+   * @param source Interrupt pin selection
               eINT1 = 0,/<int1 >/
               eINT2,/<int2>/
    * @param event Interrupt event selection
@@ -78,17 +77,17 @@ To use this library, first download the library file, paste it into the \Arduino
   
   /**
    * @brief Set data measurement rate
-   * @param range rate(HZ)
-                  ePowerDown_0HZ = 0,测量关闭
-                  eLowPower_halfHZ,0.5 hz
-                  eLowPower_1HZ,
-                  eLowPower_2HZ,
-                  eLowPower_5HZ,
-                  eLowPower_10HZ,
-                  eNormal_50HZ,
-                  eNormal_100HZ,
-                  eNormal_400HZ,
-                  eNormal_1000HZ,
+   * @param rate:rate(HZ)
+                  ePowerDown_0HZ   //测量关闭
+                  eLowPower_halfHZ //0.5 hz
+                  eLowPower_1HZ
+                  eLowPower_2HZ
+                  eLowPower_5HZ
+                  eLowPower_10HZ
+                  eNormal_50HZ
+                  eNormal_100HZ
+                  eNormal_400HZ
+                  eNormal_1000HZ
    */
   void setAcquireRate(ePowerMode_t rate);
   
@@ -118,80 +117,78 @@ To use this library, first download the library file, paste it into the \Arduino
 
   /**
    * @brief Set the threshold of interrupt source 1 interrupt
-   * @param threshold 范围是量程的范围(unit:g)
+   * @param threshold 设置的阈值在量程之内(unit:g)
    */
   void setInt1Th(uint8_t threshold);
 
   /**
    * @brief Set interrupt source 2 interrupt generation threshold
-   * @param threshold 范围是量程的范围(unit:g
+   * @param threshold 设置的阈值在量程之内(unit:g）
    */
   void setInt2Th(uint8_t threshold);
 
   /**
    * @brief Enable sleep wake function
    * @param enable true(enable)\false(disable)
-   * @return 1:表示使能失败/0：表示使能成功
+   * @return 1 表示使能失败/0 表示使能成功
    */
   int enableSleep(bool enable);
   
-  /**
-   * @brief Get the acceleration in the three directions of xyz
-   * @return Three-axis acceleration 
-             acc_x;
-             acc_y;
-             acc_z;
-   */
-  sAccel_t getAcceFromXYZ();
+
 
   /**
-   * @brief Check whether the interrupt event'source' is generated in interrupt 1
-   * @param source Interrupt event
+   * @brief Check whether the interrupt event'event' is generated in interrupt 1
+   * @param event Interrupt event
                    eXLowThanTh = 0,/<The acceleration in the x direction is less than the threshold>/
                    eXhigherThanTh ,/<The acceleration in the x direction is greater than the threshold>/
                    eYLowThanTh,/<The acceleration in the y direction is less than the threshold>/
                    eYhigherThanTh,/<The acceleration in the y direction is greater than the threshold>/
                    eZLowThanTh,/<The acceleration in the z direction is less than the threshold>/
                    eZhigherThanTh,/<The acceleration in the z direction is greater than the threshold>/
-   * @return true ：produce
-             false：Interrupt event
+   * @return true 产生了此事件
+             false 未产生此事件
    */
-  bool getInt1Event(eInterruptEvent_t source);
+  bool getInt1Event(eInterruptEvent_t event);
 
   /**
-   * @brief Check whether the interrupt event'source' is generated in interrupt 2
-   * @param source Interrupt event
+   * @brief Check whether the interrupt event'event' is generated in interrupt 2
+   * @param event Interrupt event
                    eXLowThanTh = 0,/<The acceleration in the x direction is less than the threshold>/
                    eXhigherThanTh ,/<The acceleration in the x direction is greater than the threshold>/
                    eYLowThanTh,/<The acceleration in the y direction is less than the threshold>/
                    eYhigherThanTh,/<The acceleration in the y direction is greater than the threshold>/
                    eZLowThanTh,/<The acceleration in the z direction is less than the threshold>/
                    eZhigherThanTh,/<The acceleration in the z direction is greater than the threshold>/
-   * @return true ：produce
-             false：Interrupt event
+   * @return true 产生了此事件
+             false 未产生此事件
    */
-  bool getInt2Event(eInterruptEvent_t source);
+  bool getInt2Event(eInterruptEvent_t event);
   
   /**
    * @brief Get the acceleration in the x direction
    * @return acceleration (unit:g)
-
    */
   float readAccX();
   
   /**
    * @brief Get the acceleration in the y direction
    * @return acceleration (unit:g)
-
    */
   float readAccY();
   
   /**
    * @brief Get the acceleration in the z direction
    * @return acceleration (unit:g)
-
    */
   float readAccZ();
+  
+  /**
+   * @brief Get the acceleration in the three directions of xyz
+   * @param accx 储存x方向加速度的变量
+   * @param accy 储存y方向加速度的变量
+   * @param accz 储存z方向加速度的变量
+   */
+  bool getAcceFromXYZ(float &accx,float &accy,float &accz);
 
 ```
 

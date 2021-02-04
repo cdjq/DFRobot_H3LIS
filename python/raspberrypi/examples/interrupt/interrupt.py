@@ -81,7 +81,7 @@ acce.set_int1_th(5);
 
 '''
 @brief Enable interrupt
-@source Interrupt pin selection
+@param source Interrupt pin selection
          INT_1 = 0,/<int pad 1 >/
          INT_2,/<int pad 2>/
 @param event Interrupt event selection
@@ -99,7 +99,7 @@ time.sleep(1)
 while True:
     
     if(int_pad_Flag == True):
-      #Check whether the interrupt event'source' is generated in interrupt 1
+      #Check whether the interrupt event is generated in interrupt 1
       if acce.get_int1_event(acce.Y_HIGHERTHAN_TH) == True:
          print("The acceleration in the y direction is greater than the threshold")
       

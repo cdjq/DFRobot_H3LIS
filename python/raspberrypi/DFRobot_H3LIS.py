@@ -244,7 +244,7 @@ class DFRobot_H3LIS(object):
   
   '''
     @brief Set data measurement rate
-    @param range:rate(HZ)
+    @param rate:rate(HZ)
                  POWERDOWN_0HZ = 0
                  LOWPOWER_HALFHZ = 1 
                  LOWPOWER_1HZ = 2
@@ -323,7 +323,7 @@ class DFRobot_H3LIS(object):
   
   '''
     @brief Enable interrupt
-    @source Interrupt pin selection
+    @param source Interrupt pin selection
              INT_1 = 0,/<int pad 1 >/
              INT_2,/<int pad 2>/
     @param event Interrupt event selection
@@ -370,8 +370,8 @@ class DFRobot_H3LIS(object):
       self.write_reg(self.REG_INT2_CFG,reg)
 
   '''
-    @brief Check whether the interrupt event'source' is generated in interrupt 1
-    @param source:Interrupt event
+    @brief Check whether the interrupt event'event' is generated in interrupt 1
+    @param event:Interrupt event
                   X_LOWTHAN_TH = 0 <The acceleration in the x direction is less than the threshold>
                   X_HIGHERTHAN_TH  = 1<The acceleration in the x direction is greater than the threshold>
                   Y_LOWTHAN_TH = 2<The acceleration in the y direction is less than the threshold>
@@ -382,7 +382,7 @@ class DFRobot_H3LIS(object):
     @return true ：produce
             false：Interrupt event
   '''
-  def get_int1_event(self,source):
+  def get_int1_event(self,event):
     regester = self.REG_INT1_SRC;
     if(self.__uart_i2c == SPI_MODE):
       regester  = self.REG_INT1_SRC | 0x80;
@@ -395,8 +395,8 @@ class DFRobot_H3LIS(object):
          return False
          
   '''
-    @brief Check whether the interrupt event'source' is generated in interrupt 2
-    @param source:Interrupt event
+    @brief Check whether the interrupt event'event' is generated in interrupt 2
+    @param event:Interrupt event
                   X_LOWTHAN_TH = 0 <The acceleration in the x direction is less than the threshold>
                   X_HIGHERTHAN_TH  = 1<The acceleration in the x direction is greater than the threshold>
                   Y_LOWTHAN_TH = 2<The acceleration in the y direction is less than the threshold>
@@ -407,7 +407,7 @@ class DFRobot_H3LIS(object):
     @return true ：produce
             false：Interrupt event
   '''
-  def get_int2_event(self,source):
+  def get_int2_event(self,event):
     regester = self.REG_INT2_SRC
     if(self.__uart_i2c == SPI_MODE):
       regester  = self.REG_INT2_SRC | 0x80;

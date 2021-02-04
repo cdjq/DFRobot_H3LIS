@@ -206,7 +206,7 @@ void DFRobot_H3LIS::enableInterruptEvent(eInterruptSource_t source,eInterruptEve
  
  
 }
-bool DFRobot_H3LIS::getInt1Event(eInterruptEvent_t source)
+bool DFRobot_H3LIS::getInt1Event(eInterruptEvent_t event)
 {
   uint8_t reg = 0;
   uint8_t regester = REG_INT1_SRC;
@@ -217,10 +217,10 @@ bool DFRobot_H3LIS::getInt1Event(eInterruptEvent_t source)
   readReg(regester,&reg,1);
 
   DBG(reg);
-  if(reg & (1 << source))  return true;
+  if(reg & (1 << event))  return true;
   return false;
 }
-bool DFRobot_H3LIS::getInt2Event(eInterruptEvent_t source)
+bool DFRobot_H3LIS::getInt2Event(eInterruptEvent_t event)
 {
   uint8_t reg = 0;
   uint8_t regester = REG_INT2_SRC;
@@ -229,7 +229,7 @@ bool DFRobot_H3LIS::getInt2Event(eInterruptEvent_t source)
   }
   readReg(regester,&reg,1);
   DBG(reg);
-  if(reg & (1 << source))  return true;
+  if(reg & (1 << event))  return true;
   return false;
 }
 

@@ -150,7 +150,7 @@ public:
   
   /**
    * @brief Enable interrupt
-   * @ source Interrupt pin selection
+   * @param source Interrupt pin selection
               eINT1 = 0,/<int1 >/
               eINT2,/<int2>/
    * @param event Interrupt event selection
@@ -173,7 +173,7 @@ public:
   
   /**
    * @brief Set data measurement rate
-   * @param range:rate(HZ)
+   * @param rate:rate(HZ)
                   ePowerDown_0HZ   //测量关闭
                   eLowPower_halfHZ //0.5 hz
                   eLowPower_1HZ
@@ -213,13 +213,13 @@ public:
 
   /**
    * @brief Set the threshold of interrupt source 1 interrupt
-   * @param threshold 设置de阈值在量程之内(unit:g)
+   * @param threshold 设置的阈值在量程之内(unit:g)
    */
   void setInt1Th(uint8_t threshold);
 
   /**
    * @brief Set interrupt source 2 interrupt generation threshold
-   * @param threshold 设置de阈值在量程之内(unit:g）
+   * @param threshold 设置的阈值在量程之内(unit:g）
    */
   void setInt2Th(uint8_t threshold);
 
@@ -233,32 +233,32 @@ public:
 
 
   /**
-   * @brief Check whether the interrupt event'source' is generated in interrupt 1
-   * @param source Interrupt event
+   * @brief Check whether the interrupt event'event' is generated in interrupt 1
+   * @param event Interrupt event
                    eXLowThanTh = 0,/<The acceleration in the x direction is less than the threshold>/
                    eXhigherThanTh ,/<The acceleration in the x direction is greater than the threshold>/
                    eYLowThanTh,/<The acceleration in the y direction is less than the threshold>/
                    eYhigherThanTh,/<The acceleration in the y direction is greater than the threshold>/
                    eZLowThanTh,/<The acceleration in the z direction is less than the threshold>/
                    eZhigherThanTh,/<The acceleration in the z direction is greater than the threshold>/
-   * @return true produce
-             false Interrupt event
+   * @return true 产生了此事件
+             false 未产生此事件
    */
-  bool getInt1Event(eInterruptEvent_t source);
+  bool getInt1Event(eInterruptEvent_t event);
 
   /**
-   * @brief Check whether the interrupt event'source' is generated in interrupt 2
-   * @param source Interrupt event
+   * @brief Check whether the interrupt event'event' is generated in interrupt 2
+   * @param event Interrupt event
                    eXLowThanTh = 0,/<The acceleration in the x direction is less than the threshold>/
                    eXhigherThanTh ,/<The acceleration in the x direction is greater than the threshold>/
                    eYLowThanTh,/<The acceleration in the y direction is less than the threshold>/
                    eYhigherThanTh,/<The acceleration in the y direction is greater than the threshold>/
                    eZLowThanTh,/<The acceleration in the z direction is less than the threshold>/
                    eZhigherThanTh,/<The acceleration in the z direction is greater than the threshold>/
-   * @return true produce
-             false Interrupt event
+   * @return true 产生了此事件
+             false 未产生此事件
    */
-  bool getInt2Event(eInterruptEvent_t source);
+  bool getInt2Event(eInterruptEvent_t event);
   
   /**
    * @brief Get the acceleration in the x direction

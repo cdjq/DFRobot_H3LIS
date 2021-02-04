@@ -36,7 +36,6 @@ DFRobot_H3LIS_I2C acce;
  * @param spi :SPI controller
  */
 //DFRobot_H3LIS_SPI acce(/*cs = */H3LIS_CS);
-//中断产生标志
 
 void setup(void){
 

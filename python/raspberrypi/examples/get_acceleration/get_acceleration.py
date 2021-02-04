@@ -45,7 +45,7 @@ set range:Range(g)
 acce.set_range(acce.RANGE_100_G)
 
 '''
-Set data measurement rate
+Set data measurement rate：
          POWERDOWN_0HZ 
          LOWPOWER_HALFHZ 
          LOWPOWER_1HZ 
